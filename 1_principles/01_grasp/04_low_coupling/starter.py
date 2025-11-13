@@ -42,10 +42,10 @@ class ScoreService:
 
 class Game:
     def __init__(self, score_service: ScoreService):
-        self.service = score_service
+        self.score_service = score_service
 
     def finish_game(self, player, score):
-        save_score_result = self.service.save_score(player, score)
+        save_score_result = self.score_service.save_score(player, score)
 
         return f"Game finished. {save_score_result}"
 
